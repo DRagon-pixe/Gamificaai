@@ -176,3 +176,40 @@ h2 {
 .card button:hover {
     background-color: #ad4929;
 }
+
+#portifolio {
+    height: 250px;
+    margin-bottom: 120px;
+    background-image: url(img/depositphotos_82602244-stock-illustration-isometric-pixel-art-characters\ 1.png);
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.filtro {
+    height: 100%;
+    width: 100%;
+    background-color: #47208bdc;
+    position: absolute;
+    top: 0;
+}
+
+#portifolio .container-grid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portifolio a {
+    width: fit-content;
+    font-family: "Anta";
+    font-size: 28px;
+    color: #fff;
+    z-index: 1;
+}
+
+#portifolio a:hover {
+    transform: scale(1.05);
+}
