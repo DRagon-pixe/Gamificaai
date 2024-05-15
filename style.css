@@ -38,7 +38,7 @@ html {
 
 .banner {
     height: 100vh;
-    
+
     background-repeat: no-repeat;
     background-position: 165% 40%;
     position: relative;
@@ -56,7 +56,8 @@ html {
     background-image: linear-gradient(90deg, rgba(104, 24, 48, 1) 0%, rgba(104, 24, 48, 0.8) 100%), url(img/bg-room.png.png);
 }
 
-#botao-anterior, #botao-proximo {
+#botao-anterior,
+#botao-proximo {
     width: 30px;
     background: none;
     border: none;
@@ -65,14 +66,15 @@ html {
 }
 
 #botao-anterior {
-    left: 4%;
-}
-
-#botao-proximo {
     right: 4%;
 }
 
-#botao-anterior svg, #botao-proximo svg {
+#botao-proximo {
+    left: 4%;
+}
+
+#botao-anterior svg,
+#botao-proximo svg {
     fill: #ffffff76;
 }
 
@@ -157,10 +159,9 @@ header button {
     overflow: hidden;
     border-right: 6px solid var(--laraja-gamifica);
     white-space: nowrap;
-    animation: 
+    animation:
         digitando 2s steps(40, end),
-        cursor 0.75s step-end infinite
-    ;
+        cursor 0.75s step-end infinite;
 }
 
 @keyframes digitando {
@@ -174,6 +175,7 @@ header button {
 }
 
 @keyframes cursor {
+
     from,
     to {
         border-color: transparent;
@@ -232,7 +234,7 @@ h2 {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-radius: 4px;
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .card img {
@@ -316,7 +318,7 @@ h2 {
     margin-bottom: 70px;
 }
 
-#contato form{
+#contato form {
     width: 50%;
     margin: 0 auto;
     background-color: var(--roxo-gamifica);
@@ -376,7 +378,8 @@ h2 {
     resize: none;
 }
 
-.campo input:focus, .campo-textarea textarea:focus {
+.campo input:focus,
+.campo-textarea textarea:focus {
     outline: 2px solid var(--laraja-gamifica);
 }
 
@@ -397,6 +400,7 @@ h2 {
 #contato form button:hover {
     background-color: #ad4929;
 }
+
 /* placeholder - pseudo-elemento */
 #contato form input::placeholder,
 #contato form textarea::placeholder {
@@ -456,7 +460,7 @@ footer .container-grid {
     header {
         position: relative;
     }
-    
+
     header button {
         width: 50px;
         display: unset;
@@ -552,7 +556,8 @@ footer .container-grid {
         margin-bottom: 30px;
     }
 
-    #cases, #contato {
+    #cases,
+    #contato {
         margin-bottom: unset;
     }
 
@@ -561,7 +566,9 @@ footer .container-grid {
         text-align: center;
     }
 
-    .campo, .campo-textarea, #contato form button {
+    .campo,
+    .campo-textarea,
+    #contato form button {
         width: 75%;
     }
 }
@@ -645,8 +652,8 @@ footer .container-grid {
 }
 
 @media screen and (max-width: 400px) {
-    
-    
+
+
     header img {
         width: 160px;
     }
