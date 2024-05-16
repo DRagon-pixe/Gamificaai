@@ -86,24 +86,7 @@ const selecionarSlide = (indiceSlide) => {
     banner.classList.add(slides[indiceSlide])
 }
 
-let listaCases = [
-    {
-        imagem: "https://unsplash.it/600/400?image=321",
-        descricao: "Uma empresa de tecnologia lança um desafio de gamificaco onde os funcionarios devem propor e implementar ideias inovadora"
-    }, 
-    {
-        imagem: "https://unsplash.it/600/400?image=237",
-        descricao: "Uma empresa de consultoria cria uma narrativa interativa de gamificacao para seu programa de treinamento"
-    }, 
-    {
-        imagem: "https://unsplash.it/600/400?image=1070",
-        descricao: "Uma empresa de vendes implementa uma competicao gamificado entre equipes que competem pelo topo do ranking"
-    }, 
-    {
-        imagem: "https://unsplash.it/600/400?image=40",
-        descricao: "Uma empresa de saude promove o bem-estar dos funcionarios atraves de um desafio de gamificacao de condicionamento fisico"
-    }
-]
+let listaCases = []
 
 const renderizarCases = () => {
     let elementoLista = document.getElementById("lista-cards")
@@ -120,4 +103,44 @@ const renderizarCases = () => {
     } )
 
     elementoLista.innerHTML = template
+}
+
+const carregarCases = () => {
+    // Metodo HTTP GET - read
+    fetch("http://localhost:3000/cases")
+    .then( (resposta) => resposta.json() )
+    .then( (dados) => {
+        listaCases = dados
+        renderizarCases()
+    })
+}
+
+const solicitarOrnamento = () => {
+    // Pegar valores dos inputs
+    let valorNome = document.getElementById("campo-nome").value
+    let valorEmail = document.getElementById("campo-email").value
+    let valorDescricao = document.getElementById("campo-descricao").value
+
+    // Organizar objeto com os valores
+    let dadosForm = {
+        nome: valorNome,
+        email: valorEmail,
+        descricao: valorDescricao
+    }
+
+    // Enviar requisicao para a api
+    // 127.0.0.1 -> localhost
+    // Metodo HTTP POST - Creat
+    fetch("https://127.0.0.1:3000/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosForm)
+    })
+    .then(resposta => console.log(resposta))
+    .catch(erro => console.error(erro))
+        // Limpar os campos
+        // Mostrar alert com msg de sucesso
+        // CASO ERRO - alert com msg erro
 }
